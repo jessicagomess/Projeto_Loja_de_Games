@@ -31,11 +31,11 @@ public class Produto {
 	private Double preco; //criando Atributos da Classe Produto na tb_produtos
 
 	@ManyToOne //indica que a Classe Produto será o lado N:1 e terá um Objeto(registro) da Classe Tema que será a Chave Estrangeira na Tabela tb_produtos(categoria_id)
-	@JsonIgnoreProperties("produtos")
+	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
 	
 	public Long getId() {
-		return id;
+		return this.id;
 	}
 
 	public void setId(Long id) {
@@ -43,7 +43,7 @@ public class Produto {
 	}
 
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 
 	public void setNome(String nome) {
@@ -51,7 +51,7 @@ public class Produto {
 	}
 
 	public String getDescricao() {
-		return descricao;
+		return this.descricao;
 	}
 
 	public void setDescricao(String descricao) {
@@ -59,13 +59,20 @@ public class Produto {
 	}
 
 	public Double getPreco() {
-		return preco;
+		return this.preco;
 	}
 
 	public void setPreco(Double preco) {
 		this.preco = preco;
+		
 	}
-	
-	
-	
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+			
 }
